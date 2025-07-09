@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+body {
+  background-image: url('../img/ways.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed; /* opcional para efecto parallax */
+  min-height: 100vh;
+  overflow: hidden;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  height: 90vh;
+  margin: 60px auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+h1, h2 {
+  padding: 10px;
+  font-weight: 600;
+}
+label {
+  margin: 10px 0 5px;
+  font-weight: 500;
+  display: block;
+}
+.bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 42px;
+  font-size: 14px;
+}
+button {
+  padding: 0 15px;
+  background-color: rgb(20, 20, 95);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button:hover {
+  opacity: 0.9;
+}
+.list-container {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 10px;
+  padding-right: 5px;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+.list-container::-webkit-scrollbar {
+  width: 6px;
+}
+.list-container::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 10px;
+}
+ul {
+  padding: 0;
+}
+li {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px auto;
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 5px;
+  background-color: white;
+  width: 100%;
+  max-width: 500px;
+  font-size: 14px;
+  padding: 6px 10px;
+}
+li p {
+  margin: 0;
+  flex: 1;
+  font-size: 14px;
+}
+li div {
+  display: flex;
+  gap: 8px;
+}
+.borrar {
+  background-color: rgb(222, 19, 19);
+}
+.revisado {
+  background-color: green;
+}
+.borrar, .revisado {
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.revisado i, .borrar i {
+  font-size: 14px;
+  margin: 0 2px;
+  pointer-events: none;
+}
+li.ready p {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+/* Responsive */
+@media (max-width: 600px) {
+  /* .container {
+    height: auto;
+    margin: 20px;
+    padding: 20px 10px;
+  } */
+  .container {
+    height: 95vh; /* un poco más en móvil */
+    margin: 10px;
+  }
+  input {
+    width: 80%;
+    font-size: 14px;
+  }
+  button {
+    width: 20%;
+    font-size: 16px;
+  }
+  li div {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 5px;
+  }
+  .borrar, .revisado {
+    width: 38px;
+    height: 30px;
+  }
+  .revisado i, .borrar i {
+    font-size: 13px;
+  }
+  .list-container {
+    flex: 1;
+    max-height: unset; /* eliminamos restricciones anteriores */
+  }
+}
+
+.session-bar {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centrado absoluto */
+  width: 90%;
+  max-width: 320px;
+  background-color: rgba(255, 255, 255, 0.92);
+  padding: 20px;
+  border-radius: 12px;
+  font-family: 'Raleway', sans-serif;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.session-bar h2 {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.session-bar p {
+  margin-bottom: 10px;
+}
+
+.session-bar input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.session-bar button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  background-color: #221c66;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Raleway', sans-serif;
+  transition: background-color 0.2s ease;
+}
+
+.session-bar button:hover {
+  background-color: #191347;
+}
+
+.copy-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+ margin: auto;
+ gap: 10px;
+}

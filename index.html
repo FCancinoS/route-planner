@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lista de traslados</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles/index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="img/favicons/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="img/favicons/favicon-64x64.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="img/favicons/favicon-128x128.png">
+
+</head>
+<body>
+  <div class="session-bar" >
+    <h2>Lista de Recorridos y Actividades</h2>
+    <p>Ingresa un código o crea una nueva lista:</p>
+    <input id="codigo" placeholder="ABC123" />
+    <button id="entrar">Entrar</button>
+    <button id="crear">Crear nueva</button>
+  </div>
+  <div class="container" style="display:none;">
+  <h2>Lista de traslados</h2>
+
+  <!-- Campo para desbloquear -->
+  <input id="clave" placeholder="Escribe la clave para editar" />
+  <button id="desbloquear">Desbloquear</button>
+
+  <!-- Nuevos campos -->
+  <form>
+    <label>Lugar del traslado</label>
+    <input id="lugar" type="text" placeholder="ej. Hospital Rovirosa" />
+
+    <label>Nombre del paciente</label>
+    <input id="paciente" type="text" placeholder="ej. Juan Pérez" />
+
+    <label>Fecha y hora</label>
+    <input id="fecha_hora" type="datetime-local" />
+
+    <button id="button" type="submit" style="display:none;"><i class="fas fa-plus"></i> Agregar</button>
+  </form>
+
+  <div class="list-container">
+    <ul></ul>
+  </div>
+</div>
+
+  <script type="module" src="./assets/JS/index.js"></script>
+
+</body>
+</html>
