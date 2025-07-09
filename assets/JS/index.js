@@ -54,27 +54,33 @@ function cargarSesion() {
     snapshot.forEach((child) => {
       const key = child.key;
       const { lugar_traslado, paciente, fecha_hora, estado } = child.val();
+
+      const fechaFormateada = fecha_hora.replace('T', ' ');
+
       const li = $(`
         <li data-id="${key}" class="${estado ? 'ready' : ''}">
-          <p><strong>${lugar_traslado}</strong> - ${paciente} - ${fecha_hora}</p>
-          <div style="display:${controlsUnlocked ? 'flex' : 'none'};">
+          <p><strong>${lugar_traslado}</strong> - ${paciente} - ${fechaFormateada}</p>
+          <div>
             <button class="revisado"><i class="fas fa-check"></i></button>
-            <button class="borrar"><i class="fas fa-trash-alt"></i></button>
+            ${controlsUnlocked ? `<button class="borrar"><i class="fas fa-trash-alt"></i></button>` : ''}
           </div>
         </li>
       `);
+
       $("ul").append(li);
     });
   });
 }
+
 
 function desbloquear(e) {
   e.preventDefault();
   const clave = $("#clave").val().trim();
   if (clave === "estetoscopio200") {
     controlsUnlocked = true;
-    $("#button").show();
-    $(".list-container button, .list-container div").show();
+    $("#theform").show();
+    $("#temporal-control").hide();
+
     cargarSesion(); // recargar para mostrar botones
   } else {
     alert("Clave incorrecta");
@@ -93,6 +99,7 @@ function addItem(e) {
 
   const sesionRef = ref(db, `listas/${currentSession}`);
   push(sesionRef, { lugar_traslado: lugar, paciente, fecha_hora, estado: false });
+
 
   $("#lugar").val("");
   $("#paciente").val("");
