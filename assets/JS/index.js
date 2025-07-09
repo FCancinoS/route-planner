@@ -15,7 +15,7 @@ const db = getDatabase(app);
 
 let currentSession = null;
 let controlsUnlocked = false;
-
+let dummyvariable = "dummy"; // Variable para evitar errores de linting
 $(document).ready(() => {
   $("#crear").on("click", crearSesion);
   $("#entrar").on("click", entrarSesion);
