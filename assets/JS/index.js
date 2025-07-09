@@ -132,5 +132,11 @@ function insertarEtiquetaSesion(codigo) {
 }
 
 function generarCodigo() {
-  return Math.random().toString(36).substr(2, 6).toUpperCase();
+  const caracteres = 'ABCDEFGHJKLMNPQRSTUVWXYZ123456789'; // Quitamos O, I, l, 0
+  let codigo = '';
+  for (let i = 0; i < 6; i++) {
+    const randomIndex = Math.floor(Math.random() * caracteres.length);
+    codigo += caracteres[randomIndex];
+  }
+  return codigo;
 }
